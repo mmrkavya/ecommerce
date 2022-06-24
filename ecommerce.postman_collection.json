@@ -1,0 +1,2642 @@
+{
+	"info": {
+		"_postman_id": "fc0624e6-8b00-4a59-b049-803dc6de3205",
+		"name": "ecommerce",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://127.0.0.1:5000/logout",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "  0.674298038073968",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/logout",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"logout"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "no active seesion",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "  0.602119705814417",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/logout",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "64"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/1.0.1 Python/3.9.1"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 16 May 2021 15:10:35 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errMessage\": \"No active session\",\n    \"statusCode\": \"400\"\n}"
+				},
+				{
+					"name": "logout success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "  0.6443828104323122",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/logout",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "65"
+						},
+						{
+							"key": "Vary",
+							"value": "Cookie"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "session=eyJ1c2VySWQiOjJ9.YKE2FQ.OgAF-VFRLzY0MwyEv96hFVbvuc4; HttpOnly; Path=/"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/1.0.1 Python/3.9.1"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 16 May 2021 15:11:17 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Logged out successfully\",\n    \"statusCode\": 200\n}"
+				},
+				{
+					"name": "invalid token",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "  0.578207669088475",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/logout",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"status": "FORBIDDEN",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "88"
+						},
+						{
+							"key": "Vary",
+							"value": "Cookie"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/1.0.1 Python/3.9.1"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 16 May 2021 15:25:44 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errMessage\": \"Invalid token. Please provide a valid token\",\n    \"statusCode\": 403\n}"
+				}
+			]
+		},
+		{
+			"name": "http://127.0.0.1:5000/login",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"username\": \"admin\",\r\n        \"password\": \"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"username\": \"test3\",\r\n        \"password\": \"test3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "155"
+						},
+						{
+							"key": "Vary",
+							"value": "Cookie"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "session=.eJyrVkouLS7Jz00t8kvMTVWyUipJLS4xVtJRykktS81RsjLUUSrJz07NU7Iy0DMzMDI0tDQ3MLUwNDExNNdRKi1OLfJMUbIygTDzkE2oBQD6SxtQ.YKEYGQ.27KRLmlHKZMFDrFI1W4wDm4yyEs; HttpOnly; Path=/"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/1.0.1 Python/3.9.1"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 16 May 2021 13:03:21 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"customerDetails\": {\n        \"customer_id\": 4,\n        \"customer_name\": \"test3\",\n        \"level\": 1,\n        \"token\": 0.602119705814417\n    },\n    \"statusCode\": 200\n}"
+				},
+				{
+					"name": "user already logged in",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"username\": \"test\",\r\n        \"password\": \"test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"status": "BAD REQUEST",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "68"
+						},
+						{
+							"key": "Vary",
+							"value": "Cookie"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/1.0.1 Python/3.9.1"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 16 May 2021 14:38:40 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errMessage\": \"user already logged in \",\n    \"statusCode\": 400\n}"
+				}
+			]
+		},
+		{
+			"name": "http://127.0.0.1:5000/customer",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "0.07271903390776835",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" : \"test4\",\r\n    \"password\" : \"test4\",\r\n    \"name\": \"test4\",\r\n    \"level\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/customer",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"customer"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "user already exists",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\" : \"test4\",\r\n    \"password\" : \"test4\",\r\n    \"name\": \"test4\",\r\n    \"level\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/customer",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"customer"
+							]
+						}
+					},
+					"status": "BAD REQUEST",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "92"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/1.0.1 Python/3.9.1"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 16 May 2021 14:59:25 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errMessage\": \"User already exists. Please change the username\",\n    \"statusCode\": 400\n}"
+				},
+				{
+					"name": "success response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\" : \"admin2\",\r\n    \"password\" : \"admin2\",\r\n    \"name\": \"admin2\",\r\n    \"level\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/customer",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"customer"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "67"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/1.0.1 Python/3.9.1"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 16 May 2021 15:04:41 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Record successfully added\",\n    \"statusCode\": 200\n}"
+				},
+				{
+					"name": "invalid level value",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "0.07271903390776835",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\" : \"test4\",\r\n    \"password\" : \"test4\",\r\n    \"name\": \"test4\",\r\n    \"level\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/customer",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"customer"
+							]
+						}
+					},
+					"status": "BAD REQUEST",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "127"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/1.0.1 Python/3.9.1"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 16 May 2021 15:38:10 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errMessage\": \"Invalid level . level should be '0' for customer, '1' for vendor and '2' for admin\",\n    \"statusCode\": 400\n}"
+				}
+			]
+		},
+		{
+			"name": "http://127.0.0.1:5000/item/test3",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "0.9326883705051149",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n    \"dish_name\" :\"test3\",\r\n    \"item_name\": \"test3\",\r\n    \"vendor_id\":1,\r\n    \"store_id\" : 1,\r\n    \"available_quantity\": 10,\r\n    \"unit_price\": 100\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/item/test3",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"item",
+						"test3"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "invalid token",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \r\n    \"dish_name\" :\"test3\",\r\n    \"item_name\": \"test3\",\r\n    \"vendor_id\":1,\r\n    \"store_id\" : 1,\r\n    \"available_quantity\": 10,\r\n    \"unit_price\": 100\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/item/test3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"item",
+								"test3"
+							]
+						}
+					},
+					"status": "FORBIDDEN",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "58"
+						},
+						{
+							"key": "Vary",
+							"value": "Cookie"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/1.0.1 Python/3.9.1"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 16 May 2021 15:19:47 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errMessage\": \"invalid token\",\n    \"statusCode\": 403\n}"
+				},
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "0.578207669088475",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \r\n    \"dish_name\" :\"test3\",\r\n    \"item_name\": \"test3\",\r\n    \"vendor_id\":1,\r\n    \"store_id\" : 1,\r\n    \"available_quantity\": 10,\r\n    \"unit_price\": 100\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/item/test3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"item",
+								"test3"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "312"
+						},
+						{
+							"key": "Vary",
+							"value": "Cookie"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/1.0.1 Python/3.9.1"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 16 May 2021 15:20:01 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"itemDetails\": [\n        {\n            \"available_quantity\": 10,\n            \"customer_id\": 1,\n            \"customer_name\": \"admin\",\n            \"dish_name\": \"test3\",\n            \"item_name\": \"test3\",\n            \"store_id\": 1,\n            \"store_name\": \"test\",\n            \"unit_price\": 100,\n            \"vendor_id\": 1\n        }\n    ],\n    \"statusCode\": 200\n}"
+				},
+				{
+					"name": "no active session",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "0.9143389424838378",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \r\n    \"dish_name\" :\"test3\",\r\n    \"item_name\": \"test3\",\r\n    \"vendor_id\":1,\r\n    \"store_id\" : 1,\r\n    \"available_quantity\": 10,\r\n    \"unit_price\": 100\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/item/test3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"item",
+								"test3"
+							]
+						}
+					},
+					"status": "BAD REQUEST",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "62"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/1.0.1 Python/3.9.1"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 16 May 2021 15:26:42 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errMessage\": \"No Active Session\",\n    \"statusCode\": 400\n}"
+				},
+				{
+					"name": "logged in user is admin",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "0.9326883705051149",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"dish_name\" :\"test3\",\r\n    \"item_name\": \"test3\",\r\n    \"vendor_id\":1,\r\n    \"store_id\" : 1,\r\n    \"available_quantity\": 10,\r\n    \"unit_price\": 100\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/item/test3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"item",
+								"test3"
+							]
+						}
+					},
+					"status": "INTERNAL SERVER ERROR",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "113"
+						},
+						{
+							"key": "Vary",
+							"value": "Cookie"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/1.0.1 Python/3.9.1"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 16 May 2021 16:56:03 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errMessage\": \"Logged in user not a customer or vendor . Cannot perform this action\",\n    \"statusCode\": 500\n}"
+				},
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "0.578207669088475",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \r\n    \"dish_name\" :\"test3\",\r\n    \"item_name\": \"test3\",\r\n    \"vendor_id\":1,\r\n    \"store_id\" : 1,\r\n    \"available_quantity\": 10,\r\n    \"unit_price\": 100\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/item/test3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"item",
+								"test3"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "312"
+						},
+						{
+							"key": "Vary",
+							"value": "Cookie"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/1.0.1 Python/3.9.1"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 16 May 2021 15:16:41 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"itemDetails\": [\n        {\n            \"available_quantity\": 10,\n            \"customer_id\": 1,\n            \"customer_name\": \"admin\",\n            \"dish_name\": \"test3\",\n            \"item_name\": \"test3\",\n            \"store_id\": 1,\n            \"store_name\": \"test\",\n            \"unit_price\": 100,\n            \"vendor_id\": 1\n        }\n    ],\n    \"statusCode\": 200\n}"
+				}
+			]
+		},
+		{
+			"name": "http://127.0.0.1:5000/item",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "0.16870991147398018",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n    \"dish_name\" :\"test6\",\r\n    \"item_name\": \"test6\",\r\n    \"vendor_id\":1,\r\n    \"store_id\" : 1,\r\n    \"available_quantity\": 10,\r\n    \"unit_price\": 100\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/item",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"item"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "no active session",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "0.16870991147398018",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"dish_name\" :\"test6\",\r\n    \"item_name\": \"test6\",\r\n    \"vendor_id\":1,\r\n    \"store_id\" : 1,\r\n    \"available_quantity\": 10,\r\n    \"unit_price\": 100\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/item",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"item"
+							]
+						}
+					},
+					"status": "FORBIDDEN",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "62"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/1.0.1 Python/3.9.1"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 16 May 2021 12:56:09 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errMessage\": \"No Active Session\",\n    \"statusCode\": 403\n}"
+				},
+				{
+					"name": "logged in user not vendor",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "0.578207669088475",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"dish_name\" :\"test6\",\r\n    \"item_name\": \"test6\",\r\n    \"vendor_id\":1,\r\n    \"store_id\" : 1,\r\n    \"available_quantity\": 10,\r\n    \"unit_price\": 100\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/item",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"item"
+							]
+						}
+					},
+					"status": "BAD REQUEST",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "73"
+						},
+						{
+							"key": "Vary",
+							"value": "Cookie"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/1.0.1 Python/3.9.1"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 16 May 2021 15:19:23 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errMessage\": \"logged in user is not vendor\",\n    \"statusCode\": 400\n}"
+				},
+				{
+					"name": "success: logged in user vendor",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "0.9143389424838378",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"dish_name\" :\"test6\",\r\n    \"item_name\": \"test6\",\r\n    \"vendor_id\":1,\r\n    \"store_id\" : 1,\r\n    \"available_quantity\": 10,\r\n    \"unit_price\": 100\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/item",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"item"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "65"
+						},
+						{
+							"key": "Vary",
+							"value": "Cookie"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/1.0.1 Python/3.9.1"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 16 May 2021 15:22:23 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Item successfully added\",\n    \"statusCode\": 200\n}"
+				}
+			]
+		},
+		{
+			"name": "http://127.0.0.1:5000/order",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "0.9150153410577548",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"item_id\":1,\r\n \"quantity\":1\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/order",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"order"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "invalid token",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/orders",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"status": "FORBIDDEN",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "58"
+						},
+						{
+							"key": "Vary",
+							"value": "Cookie"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/1.0.1 Python/3.9.1"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 16 May 2021 15:12:30 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errMessage\": \"invalid token\",\n    \"statusCode\": 403\n}"
+				},
+				{
+					"name": "logged in user not admin",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "0.3238200562442105",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/orders",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"status": "INTERNAL SERVER ERROR",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "101"
+						},
+						{
+							"key": "Vary",
+							"value": "Cookie"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/1.0.1 Python/3.9.1"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 16 May 2021 15:13:01 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errMessage\": \"Logged in user not a admin  . Cannot perform this action\",\n    \"statusCode\": 500\n}"
+				},
+				{
+					"name": "sucess: logged in user admin",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "0.6946935105462064",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/orders",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1032"
+						},
+						{
+							"key": "Vary",
+							"value": "Cookie"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/1.0.1 Python/3.9.1"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 16 May 2021 15:13:46 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"orderDetails\": [\n        {\n            \"customer_id\": 1,\n            \"dish_name\": \"test\",\n            \"item_name\": \"test\",\n            \"quantity\": 1,\n            \"store_id\": 1,\n            \"store_name\": \"test\",\n            \"total_price\": 10,\n            \"unit_price\": 10,\n            \"vendor_id\": 1\n        },\n        {\n            \"customer_id\": 2,\n            \"dish_name\": \"test\",\n            \"item_name\": \"test\",\n            \"quantity\": 1,\n            \"store_id\": 1,\n            \"store_name\": \"test\",\n            \"total_price\": 10,\n            \"unit_price\": 10,\n            \"vendor_id\": 1\n        },\n        {\n            \"customer_id\": 2,\n            \"dish_name\": \"test\",\n            \"item_name\": \"test\",\n            \"quantity\": 1,\n            \"store_id\": 1,\n            \"store_name\": \"test\",\n            \"total_price\": 10,\n            \"unit_price\": 10,\n            \"vendor_id\": 1\n        },\n        {\n            \"customer_id\": 2,\n            \"dish_name\": \"test\",\n            \"item_name\": \"test\",\n            \"quantity\": 1,\n            \"store_id\": 1,\n            \"store_name\": \"test\",\n            \"total_price\": 10,\n            \"unit_price\": 10,\n            \"vendor_id\": 1\n        }\n    ],\n    \"statusCode\": 200\n}"
+				},
+				{
+					"name": "no active session",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "0.6946935105462064",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/orders",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"status": "BAD REQUEST",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "62"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/1.0.1 Python/3.9.1"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 16 May 2021 15:14:20 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errMessage\": \"No Active Session\",\n    \"statusCode\": 400\n}"
+				}
+			]
+		},
+		{
+			"name": "http://127.0.0.1:5000/customer/orders",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "0.9117644348123846",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/customer/orders?customerId=1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"customer",
+						"orders"
+					],
+					"query": [
+						{
+							"key": "customerId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "inactive session",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/customer/orders",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"customer",
+								"orders"
+							]
+						}
+					},
+					"status": "BAD REQUEST",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "62"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/1.0.1 Python/3.9.1"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 16 May 2021 15:05:10 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errMessage\": \"No Active Session\",\n    \"statusCode\": 400\n}"
+				},
+				{
+					"name": "invalid token",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/customer/orders",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"customer",
+								"orders"
+							]
+						}
+					},
+					"status": "FORBIDDEN",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "58"
+						},
+						{
+							"key": "Vary",
+							"value": "Cookie"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/1.0.1 Python/3.9.1"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 16 May 2021 15:15:00 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errMessage\": \"invalid token\",\n    \"statusCode\": 403\n}"
+				},
+				{
+					"name": "success: any logged in user",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "0.9117644348123846",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/customer/orders?customerId=1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"customer",
+								"orders"
+							],
+							"query": [
+								{
+									"key": "customerId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "294"
+						},
+						{
+							"key": "Vary",
+							"value": "Cookie"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/1.0.1 Python/3.9.1"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 16 May 2021 15:49:42 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"orderDetails\": [\n        {\n            \"customer_id\": 1,\n            \"dish_name\": \"test\",\n            \"item_name\": \"test\",\n            \"quantity\": 1,\n            \"store_id\": 1,\n            \"store_name\": \"test\",\n            \"total_price\": 10,\n            \"unit_price\": 10,\n            \"vendor_id\": 1\n        }\n    ],\n    \"statusCode\": 200\n}"
+				},
+				{
+					"name": "invalid customerid",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "0.9117644348123846",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/customer/orders?customerId=10",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"customer",
+								"orders"
+							],
+							"query": [
+								{
+									"key": "customerId",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"status": "BAD REQUEST",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "97"
+						},
+						{
+							"key": "Vary",
+							"value": "Cookie"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/1.0.1 Python/3.9.1"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 16 May 2021 16:00:47 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errMessage\": \"invalid customerId. Please input correct customer ID\",\n    \"statusCode\": 400\n}"
+				}
+			]
+		},
+		{
+			"name": "http://127.0.0.1:5000/vendor",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n   \"customerId\": 2,\r\n   \"storeName\": \"vendor10\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/vendor",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"vendor"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "duplicate store name",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n   \"customerId\": 4,\r\n   \"storeName\": \"vendor5\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/vendor",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"vendor"
+							]
+						}
+					},
+					"status": "BAD REQUEST",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "104"
+						},
+						{
+							"key": "Vary",
+							"value": "Cookie"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/1.0.1 Python/3.9.1"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 16 May 2021 15:17:44 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errMessage\": \"Store name already existes. Please provide a diff storeName\",\n    \"statusCode\": 400\n}"
+				},
+				{
+					"name": "invalid customer id",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n   \"customerId\": 8,\r\n   \"storeName\": \"vendor5\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/vendor",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"vendor"
+							]
+						}
+					},
+					"status": "BAD REQUEST",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "116"
+						},
+						{
+							"key": "Vary",
+							"value": "Cookie"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/1.0.1 Python/3.9.1"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 16 May 2021 15:18:21 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errMessage\": \"Invalid customer id. For vendor should be linked with valid customer id\",\n    \"statusCode\": 400\n}"
+				},
+				{
+					"name": "success: user logged in is vendor or customer",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n   \"customerId\": 3,\r\n   \"storeName\": \"vendor9\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/vendor",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"vendor"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "67"
+						},
+						{
+							"key": "Vary",
+							"value": "Cookie"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/1.0.1 Python/3.9.1"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 16 May 2021 15:23:40 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Vendor successfully added\",\n    \"statusCode\": 200\n}"
+				},
+				{
+					"name": "given customer id is not level customer",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n   \"customerId\": 1,\r\n   \"storeName\": \"vendor5\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/vendor",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"vendor"
+							]
+						}
+					},
+					"status": "BAD REQUEST",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "110"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/1.0.1 Python/3.9.1"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 16 May 2021 16:09:50 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errMessage\": \"given user id is not a customer. Please provide valid customer id\",\n    \"statusCode\": 400\n}"
+				}
+			]
+		},
+		{
+			"name": "http://127.0.0.1:5000/order",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "0.16870991147398018",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"item_id\":1,\r\n \"quantity\":1\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/order",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"order"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success:",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "0.3414771576216066",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"item_id\":1,\r\n \"quantity\":1\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/order",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"order"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "87"
+						},
+						{
+							"key": "Vary",
+							"value": "Cookie"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/1.0.1 Python/3.9.1"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 16 May 2021 13:11:19 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"orderDetails\": {\n        \"item_id\": 1,\n        \"quantity\": 1\n    },\n    \"statusCode\": 200\n}"
+				},
+				{
+					"name": "logged in user not customer",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "0.9143389424838378",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"item_id\":1,\r\n \"quantity\":1\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/order",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"order"
+							]
+						}
+					},
+					"status": "INTERNAL SERVER ERROR",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "104"
+						},
+						{
+							"key": "Vary",
+							"value": "Cookie"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/1.0.1 Python/3.9.1"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 16 May 2021 15:24:41 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errMessage\": \"Logged in user not a customer  . Cannot perform this action\",\n    \"statusCode\": 500\n}"
+				},
+				{
+					"name": "invalid token",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"item_id\":1,\r\n \"quantity\":1\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/order",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"order"
+							]
+						}
+					},
+					"status": "FORBIDDEN",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "58"
+						},
+						{
+							"key": "Vary",
+							"value": "Cookie"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/1.0.1 Python/3.9.1"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 16 May 2021 15:25:06 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errMessage\": \"invalid token\",\n    \"statusCode\": 403\n}"
+				}
+			]
+		},
+		{
+			"name": "http://127.0.0.1:5000/orders",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "0.9117644348123846",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/orders",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "invalid token",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "0.9117644348123846",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/orders",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"status": "FORBIDDEN",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "58"
+						},
+						{
+							"key": "Vary",
+							"value": "Cookie"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/1.0.1 Python/3.9.1"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 16 May 2021 16:34:20 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errMessage\": \"invalid token\",\n    \"statusCode\": 403\n}"
+				},
+				{
+					"name": "success: logged in user is admin",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "0.9117644348123846",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/orders",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1032"
+						},
+						{
+							"key": "Vary",
+							"value": "Cookie"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/1.0.1 Python/3.9.1"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 16 May 2021 16:34:56 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"orderDetails\": [\n        {\n            \"customer_id\": 1,\n            \"dish_name\": \"test\",\n            \"item_name\": \"test\",\n            \"quantity\": 1,\n            \"store_id\": 1,\n            \"store_name\": \"test\",\n            \"total_price\": 10,\n            \"unit_price\": 10,\n            \"vendor_id\": 1\n        },\n        {\n            \"customer_id\": 2,\n            \"dish_name\": \"test\",\n            \"item_name\": \"test\",\n            \"quantity\": 1,\n            \"store_id\": 1,\n            \"store_name\": \"test\",\n            \"total_price\": 10,\n            \"unit_price\": 10,\n            \"vendor_id\": 1\n        },\n        {\n            \"customer_id\": 2,\n            \"dish_name\": \"test\",\n            \"item_name\": \"test\",\n            \"quantity\": 1,\n            \"store_id\": 1,\n            \"store_name\": \"test\",\n            \"total_price\": 10,\n            \"unit_price\": 10,\n            \"vendor_id\": 1\n        },\n        {\n            \"customer_id\": 2,\n            \"dish_name\": \"test\",\n            \"item_name\": \"test\",\n            \"quantity\": 1,\n            \"store_id\": 1,\n            \"store_name\": \"test\",\n            \"total_price\": 10,\n            \"unit_price\": 10,\n            \"vendor_id\": 1\n        }\n    ],\n    \"statusCode\": 200\n}"
+				},
+				{
+					"name": "logged in user not admin",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "0.475192599418236",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/orders",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"status": "INTERNAL SERVER ERROR",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "101"
+						},
+						{
+							"key": "Vary",
+							"value": "Cookie"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/1.0.1 Python/3.9.1"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 16 May 2021 16:41:12 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errMessage\": \"Logged in user not a admin  . Cannot perform this action\",\n    \"statusCode\": 500\n}"
+				}
+			]
+		},
+		{
+			"name": "http://127.0.0.1:5000/vendor",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "0.9326883705051149",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/vendor",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"vendor"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "invalid token",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "0.21813162250844909",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/vendor",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"vendor"
+							]
+						}
+					},
+					"status": "FORBIDDEN",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "58"
+						},
+						{
+							"key": "Vary",
+							"value": "Cookie"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/1.0.1 Python/3.9.1"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 16 May 2021 16:44:51 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errMessage\": \"invalid token\",\n    \"statusCode\": 403\n}"
+				},
+				{
+					"name": "success response for any logged in user",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "0.475192599418236",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/vendor",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"vendor"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "4378"
+						},
+						{
+							"key": "Vary",
+							"value": "Cookie"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/1.0.1 Python/3.9.1"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 16 May 2021 16:45:35 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"orderDetails\": [\n        {\n            \"available_quantity\": 10,\n            \"dish_name\": \"test\",\n            \"item_name\": \"test\",\n            \"store_id\": 1,\n            \"store_name\": \"test\",\n            \"unit_price\": 10,\n            \"vendor_id\": 1\n        },\n        {\n            \"available_quantity\": 100,\n            \"dish_name\": \"tet2\",\n            \"item_name\": \"test2\",\n            \"store_id\": 1,\n            \"store_name\": \"test\",\n            \"unit_price\": 11,\n            \"vendor_id\": 1\n        },\n        {\n            \"available_quantity\": 100,\n            \"dish_name\": \"tet2\",\n            \"item_name\": \"test2\",\n            \"store_id\": 1,\n            \"store_name\": \"test\",\n            \"unit_price\": 11,\n            \"vendor_id\": 1\n        },\n        {\n            \"available_quantity\": 100,\n            \"dish_name\": \"tet2\",\n            \"item_name\": \"test2\",\n            \"store_id\": 1,\n            \"store_name\": \"test\",\n            \"unit_price\": 11,\n            \"vendor_id\": 1\n        },\n        {\n            \"available_quantity\": 100,\n            \"dish_name\": \"tet2\",\n            \"item_name\": \"test2\",\n            \"store_id\": 1,\n            \"store_name\": \"test\",\n            \"unit_price\": 11,\n            \"vendor_id\": 1\n        },\n        {\n            \"available_quantity\": 100,\n            \"dish_name\": \"tet2\",\n            \"item_name\": \"test2\",\n            \"store_id\": 1,\n            \"store_name\": \"test\",\n            \"unit_price\": 11,\n            \"vendor_id\": 1\n        },\n        {\n            \"available_quantity\": 100,\n            \"dish_name\": \"tet2\",\n            \"item_name\": \"test2\",\n            \"store_id\": 1,\n            \"store_name\": \"test\",\n            \"unit_price\": 11,\n            \"vendor_id\": 1\n        },\n        {\n            \"available_quantity\": 100,\n            \"dish_name\": \"tet2\",\n            \"item_name\": \"test2\",\n            \"store_id\": 1,\n            \"store_name\": \"test\",\n            \"unit_price\": 11,\n            \"vendor_id\": 1\n        },\n        {\n            \"available_quantity\": 100,\n            \"dish_name\": \"tet2\",\n            \"item_name\": \"test2\",\n            \"store_id\": 1,\n            \"store_name\": \"test\",\n            \"unit_price\": 11,\n            \"vendor_id\": 1\n        },\n        {\n            \"available_quantity\": 100,\n            \"dish_name\": \"tet2\",\n            \"item_name\": \"test2\",\n            \"store_id\": 1,\n            \"store_name\": \"test\",\n            \"unit_price\": 11,\n            \"vendor_id\": 1\n        },\n        {\n            \"available_quantity\": 100,\n            \"dish_name\": \"tet2\",\n            \"item_name\": \"test2\",\n            \"store_id\": 1,\n            \"store_name\": \"test\",\n            \"unit_price\": 11,\n            \"vendor_id\": 1\n        },\n        {\n            \"available_quantity\": 100,\n            \"dish_name\": \"tet2\",\n            \"item_name\": \"test2\",\n            \"store_id\": 1,\n            \"store_name\": \"test\",\n            \"unit_price\": 11,\n            \"vendor_id\": 1\n        },\n        {\n            \"available_quantity\": 100,\n            \"dish_name\": \"tet2\",\n            \"item_name\": \"test2\",\n            \"store_id\": 1,\n            \"store_name\": \"test\",\n            \"unit_price\": 11,\n            \"vendor_id\": 1\n        },\n        {\n            \"available_quantity\": 100,\n            \"dish_name\": \"tet2\",\n            \"item_name\": \"test2\",\n            \"store_id\": 1,\n            \"store_name\": \"test\",\n            \"unit_price\": 11,\n            \"vendor_id\": 1\n        },\n        {\n            \"available_quantity\": 100,\n            \"dish_name\": \"tet2\",\n            \"item_name\": \"test2\",\n            \"store_id\": 1,\n            \"store_name\": \"test\",\n            \"unit_price\": 11,\n            \"vendor_id\": 1\n        },\n        {\n            \"available_quantity\": 10,\n            \"dish_name\": \"test3\",\n            \"item_name\": \"test3\",\n            \"store_id\": 1,\n            \"store_name\": \"test\",\n            \"unit_price\": 100,\n            \"vendor_id\": 1\n        },\n        {\n            \"available_quantity\": 10,\n            \"dish_name\": \"test6\",\n            \"item_name\": \"test6\",\n            \"store_id\": 1,\n            \"store_name\": \"test\",\n            \"unit_price\": 100,\n            \"vendor_id\": 1\n        },\n        {\n            \"available_quantity\": 10,\n            \"dish_name\": \"test6\",\n            \"item_name\": \"test6\",\n            \"store_id\": 1,\n            \"store_name\": \"test\",\n            \"unit_price\": 100,\n            \"vendor_id\": 1\n        },\n        {\n            \"available_quantity\": 10,\n            \"dish_name\": \"test6\",\n            \"item_name\": \"test6\",\n            \"store_id\": 1,\n            \"store_name\": \"test\",\n            \"unit_price\": 100,\n            \"vendor_id\": 1\n        },\n        {\n            \"available_quantity\": 10,\n            \"dish_name\": \"test6\",\n            \"item_name\": \"test6\",\n            \"store_id\": 1,\n            \"store_name\": \"test\",\n            \"unit_price\": 100,\n            \"vendor_id\": 1\n        },\n        {\n            \"available_quantity\": 10,\n            \"dish_name\": \"test6\",\n            \"item_name\": \"test6\",\n            \"store_id\": 1,\n            \"store_name\": \"test\",\n            \"unit_price\": 100,\n            \"vendor_id\": 1\n        }\n    ],\n    \"statusCode\": 200\n}"
+				}
+			]
+		}
+	]
+}

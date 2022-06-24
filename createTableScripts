@@ -1,0 +1,4 @@
+CREATE TABLE customer (id integer primary key autoincrement,name TEXT, username TEXT not null, password TEXT not null, level INTEGER);
+CREATE TABLE vendor(id integer primary key autoincrement, customer_id integer,store_name text, foreign key(customer_id) references customer(id));
+CREATE TABLE item(id integer primary key autoincrement,dish_name text, item_name text, vendor_id integer, store_id integer, available_quantity real, unit_price real, foreign key(vendor_id) references vendor(id));
+CREATE TABLE orders(id integer primary key autoincrement, customer_id integer,item_id integer, quantity real, foreign key (customer_id) references customer(id), foreign key (item_id) references item(id));

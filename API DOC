@@ -1,0 +1,229 @@
+APINAME : ecommerce
+Please refer to postman collection attached for more detailed examples for success and failure scenarios
+Index:
+1. Registering the user
+2. login
+3. logout
+4. adding vendor
+5. adding item
+6. get list of all the orders
+7. get list of all the vendors
+8. search item by name
+9. order
+1.Registering user:
+    Conditions:
+        a. level should be valid
+        b. all the necessary infomation is provided
+
+	user can register by user POST: /customer endpoint;
+	Sample:
+	---------------------------------
+	URL: POST: /customer
+	Request Body:
+		The request body contains the following information:
+			1.username:  username			
+			2. password:  pasword
+			3.name: name of the user
+			4.level: the following values for level: 0 for customer
+													 1 for vendor
+													 2 for admin
+				
+		Sample Request: 
+		------------------------------
+		{
+			"username" : "admin2",
+			"password" : "admin2",
+			"name": "admin2",
+			"level": 2
+		}
+		------------------------------
+		
+2.Login
+	=>The token returned is used for calling the subsequent functions by using it as header.
+	=>User can login using the below url
+	condition:
+	    a. there is no active session
+    	b.given username and password is correct
+
+	 URL: GET: http://127.0.0.1:5000/login
+	 Request Body:
+	    The request contains the following information
+		 1. username
+		 2. passowrd
+		Sample Request: 
+		------------------------------
+			{
+				"username": "test3",
+				"password": "test3"
+			}
+		------------------------------
+	 Response:
+		the response contains the following information.
+			1.customer_id
+			2.customer_name
+			3.level
+			4.token: unique for each logged in session.
+		Sample Response:
+		----------------------------------------
+			{
+				"customerDetails": {
+					"customer_id": 4,
+					"customer_name": "test3",
+					"level": 1,
+					"token": 0.602119705814417
+				},
+				"statusCode": 200
+			}
+		----------------------------------------
+			
+		The token returned is used for calling the subsequent functions by using it as header.
+		
+3. Logout:
+	the user can logout using the token id returned during login by passing it as header.
+	Conditions:
+	    a. token is should be valid and sesssion should be active
+	URL: GET /logout
+	Header: token: <token returned during login>
+	
+4.Adding vendor:
+	The vendor can be added without logging in .
+	Conditions: ->the given customer id is already added into the customer table only then the corresponding can be added to the vendor table
+				->the store name should be unique
+	URL: POST http://127.0.0.1:5000/vendor
+	sample request:
+	--------------------------
+	{
+    
+		"customerId": 2,
+		"storeName": "vendor11"
+	}
+	--------------------------
+		
+5. Adding item:
+Condition:
+   a.The logged in user should be vendor.
+   b. token should be valid and session active
+
+   URL: POST http://127.0.0.1:5000/item
+   Header: token: <token returned during login>
+   Sample Request:
+   --------------------
+   {
+    
+    "dish_name" :"test6",
+    "item_name": "test6",
+    "vendor_id":1,
+    "store_id" : 1,
+    "available_quantity": 10,
+    "unit_price": 100
+	}
+   --------------------
+  
+6. get list of all the orders:
+	Returns details of the all the orders placed till now
+	 condition:
+	    a.only logged in admin can view list of all the orders
+	    b.token should be valid and session should be active
+
+	 URL: GET http://127.0.0.1:5000/orders
+	 header: token: <token returned during login>
+	 SampleResponse:
+	 -----------------------------------
+	 {
+    "orderDetails": [
+        {
+            "customer_id": 1,
+            "dish_name": "test",
+            "item_name": "test",
+            "quantity": 1,
+            "store_id": 1,
+            "store_name": "test",
+            "total_price": 10,
+            "unit_price": 10,
+            "vendor_id": 1
+        }
+    ],
+    "statusCode": 200
+	}
+	 -----------------------------------
+		
+		
+7.get list of all vendors:
+
+   Any logged in user can use this to get list of all the vendors
+   conditions:
+        a. token should be valid and session should be active
+
+    URL: http://127.0.0.1:5000/vendor
+	Header: token: <token returned in login response>
+	Sample Response:
+	--------------------------------------
+	{
+    "vendorDetails": [
+        {
+            "available_quantity": 10.0,
+            "dish_name": "test",
+            "item_name": "test",
+            "store_id": 1,
+            "store_name": "test",
+            "unit_price": 10.0,
+            "vendor_id": 1
+        }
+    ],
+    "statusCode": 200
+	}
+	-------------------------------------
+	
+8. search by name:
+	Returns details of item given in the url parameter ITEMNAME
+   condition:
+            -> logged in user should be customer or vendor
+            -> token should be valid and session should be active
+   URL: http://127.0.0.1:5000/item/<ITEMNAME>
+   
+   Header: token: <token returned in login response>
+   Sample Response:
+   ---------------------------------
+   {
+    "itemDetails": [
+        {
+            "available_quantity": 10,
+            "customer_id": 1,
+            "customer_name": "admin",
+            "dish_name": "test3",
+            "item_name": "test3",
+            "store_id": 1,
+            "store_name": "test",
+            "unit_price": 100,
+            "vendor_id": 1
+        }
+    ],
+    "statusCode": 200
+	}
+	-------------------------------
+9. order
+   condition:
+        -> logged in customer can place order
+        -> token should be valid and session should be active
+
+   To place order the following details are required
+   URL: http://127.0.0.1:5000/order
+   Header: token: <token returned during login>
+   Sample Request:
+   ----------------------------
+   {
+		"item_id":1,
+		"quantity":1
+
+	}
+   ----------------------------
+   Sample Response:
+   ----------------------------
+   {
+    "orderDetails": {
+        "item_id": 1,
+        "quantity": 1
+    },
+    "statusCode": 200
+}
+   ----------------------------
