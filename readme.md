@@ -1,3 +1,11 @@
+
+#Ecommerce Backend
+
+Implemented the backend for an e-commerce website in Flask with SQLite database.
+
+Its a complete backend system which allows  to signup customers and vendors, login them using their credentials, as a vendor add items in the database, as a customer place an order, and as an admin, I should be able to see all the orders placed etc.
+
+ 
 ## attached the postman collection for reference of request-response
 /customer:
 Post:
